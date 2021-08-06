@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">worldSkillsComida</string>
+    <string name="title_desyauno">Desayuno</string>
+    <string name="title_almuerzo">Almuerzo</string>
+    <string name="title_cena">Cena</string>
+    <string name="title_bebidas">Bebidas</string>
+    <string name="title_detalle">Detalle</string>
+
+</resources>
