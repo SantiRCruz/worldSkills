@@ -7,13 +7,13 @@
 
     <fragment
         android:id="@+id/navigation_desayuno"
-        android:name="com.santiago.worldskillscomida.ui.home.HomeFragment"
+        android:name="com.santiago.worldskillscomida.ui.desayuno.DesayunoFragment"
         android:label="@string/title_desyauno"
         tools:layout="@layout/fragment_desayuno" />
 
     <fragment
         android:id="@+id/navigation_almuerzo"
-        android:name="com.santiago.worldskillscomida.ui.dashboard.DashboardFragment"
+        android:name="com.santiago.worldskillscomida.ui.almuerzo.AlmuerzoFragment"
         android:label="@string/title_almuerzo"
         tools:layout="@layout/fragment_almuerzo" />
 
@@ -43,7 +43,7 @@
         android:label="activity_especialidad"
         tools:layout="@layout/activity_especialidad" />
     <fragment
-        android:id="@+id/bebidasFragment"
+        android:id="@+id/navigation_bebida"
         android:name="com.santiago.worldskillscomida.BebidasFragment"
         android:label="@string/title_bebidas"
         tools:layout="@layout/fragment_bebidas" />

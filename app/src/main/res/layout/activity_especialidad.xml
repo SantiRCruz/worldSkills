@@ -37,7 +37,7 @@
         >
 
         <ImageView
-            android:id="@+id/imageView4"
+            android:id="@+id/imgEspecialidad"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scaleType="centerCrop"
@@ -46,21 +46,37 @@
     </androidx.cardview.widget.CardView>
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/tvNombre"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
         android:text="Frijoles"
         android:textColor="@color/white"
         android:textSize="23sp"
         android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/tvPrecio"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cvImagen" />
+    <TextView
+        android:id="@+id/tvPrecio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="16dp"
+        android:text="Precio :"
+        android:textColor="@color/white"
+        android:textSize="23sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/tvNombre"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toEndOf="@+id/tvNombre"
         app:layout_constraintTop_toBottomOf="@+id/cvImagen" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/tvDescripcion"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -70,7 +86,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNombre" />
 
     <com.google.android.material.button.MaterialButton
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -82,7 +98,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.924"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/tvDescripcion" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

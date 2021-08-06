@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="orange_200">#ff7539</color>
-    <color name="orange_500">#c30000</color>
-    <color name="orange_700">#ff3d00</color>
+    <color name="orange_500">#ff3d00</color>
+    <color name="orange_700">#c30000</color>
     <color name="yellow_200">#DA9D03</color>
     <color name="yellow_700">#876101</color>
     <color name="black">#FF000000</color>
@@ -10,4 +10,7 @@
     <color name="white">#FFFFFFFF</color>
     <color name="white_gray">#B5B5B5</color>
     <color name="white_gray2">#E0E0E0</color>
+    <color name="beige">#FFF3D6</color>
+    <color name="orange_100">#FFAC86</color>
+
 </resources>
