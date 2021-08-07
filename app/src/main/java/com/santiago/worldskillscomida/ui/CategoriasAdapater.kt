@@ -1,4 +1,4 @@
-package com.santiago.worldskillscomida
+package com.santiago.worldskillscomida.ui
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
+import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.databinding.ItemCategoriaBinding
 import com.santiago.worldskillscomida.models.categoriaId.Productos
 
@@ -30,9 +31,9 @@ class CategoriasAdapater(val productos :List<Productos>):RecyclerView.Adapter<Ca
             binding.tvItemNombre.text = productos.nombre
             binding.tvItemDescripcion.text = productos.descripcion
             binding.tvItemPrecio.text = productos.precio.toString()
-            Glide.with(view).load(productos.url_foto).into(binding.imgItem)
-            view.setOnClickListener {
-                Snackbar.make(it,"presionado ${productos.id}",Snackbar.LENGTH_LONG)
+            Glide.with(view).load(productos.url_imagen).into(binding.imgItem)
+            binding.root.setOnClickListener {
+                Snackbar.make(it,"presionado ${productos.id}",Snackbar.LENGTH_LONG).show()
             }
         }
     }

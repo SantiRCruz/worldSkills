@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/orange_100"
-    tools:context=".IniciarSesionActivity">
+    android:background="@drawable/sausage"
+    tools:context=".ui.iniciosesion.IniciarSesionActivity">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,13 +13,11 @@
         android:layout_height="match_parent">
 
 
-
-
         <androidx.cardview.widget.CardView
             android:id="@+id/cardView"
             android:layout_width="300dp"
-            android:layout_height="380dp"
-            android:layout_marginTop="64dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
             android:elevation="16dp"
             app:cardCornerRadius="20dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -29,25 +27,23 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
+                android:layout_height="match_parent">
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:id="@+id/txILCorreo"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="40dp"
+                    android:layout_marginTop="24dp"
                     android:hint="Correo :"
                     app:endIconMode="clear_text"
-                    app:layout_constraintBottom_toTopOf="@+id/txILConstraseña"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/tvTituloIniciarSesion"
                     app:startIconDrawable="@drawable/ic_baseline_mail_outline_24">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCorreo"
+                        android:id="@+id/etCorreo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress" />
@@ -58,11 +54,9 @@
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="28dp"
-                    android:layout_marginBottom="24dp"
+                    android:layout_marginTop="24dp"
                     android:hint="Contraseña :"
                     app:endIconMode="password_toggle"
-                    app:layout_constraintBottom_toTopOf="@+id/buttonIniciarSesion"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.503"
                     app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +64,7 @@
                     app:startIconDrawable="@drawable/ic_baseline_vpn_key_24">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtConstraseña"
+                        android:id="@+id/etConstrasena"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
                 </com.google.android.material.textfield.TextInputLayout>
@@ -79,23 +73,46 @@
                     android:id="@+id/buttonIniciarSesion"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="8dp"
                     android:text="Iniciar Sesión"
-                    app:layout_constraintBottom_toTopOf="@+id/buttonRegistrarse"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txILConstraseña" />
+                    app:layout_constraintTop_toBottomOf="@+id/cbRecordarContraseña" />
 
                 <com.google.android.material.button.MaterialButton
                     android:id="@+id/buttonRegistrarse"
                     style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="32dp"
                     android:text="Registrarse"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/buttonIniciarSesion" />
+
+                <TextView
+                    android:id="@+id/tvTituloIniciarSesion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="24dp"
+                    android:text="INICIO DE SESIÓN"
+                    android:textSize="23sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <CheckBox
+                    android:id="@+id/cbRecordarContraseña"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Recordarme"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txILConstraseña" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
 
@@ -113,7 +130,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/imgInicioSesion"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="10dp"

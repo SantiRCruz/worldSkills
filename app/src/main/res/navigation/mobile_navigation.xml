@@ -19,36 +19,36 @@
 
     <fragment
         android:id="@+id/navigation_cena"
-        android:name="com.santiago.worldskillscomida.ui.notifications.NotificationsFragment"
+        android:name="com.santiago.worldskillscomida.ui.cena.CenaFragment"
         android:label="@string/title_cena"
         tools:layout="@layout/fragment_cena" />
     <activity
         android:id="@+id/splashActivity"
-        android:name="com.santiago.worldskillscomida.SplashActivity"
+        android:name="com.santiago.worldskillscomida.ui.SplashActivity"
         android:label="activity_splash"
         tools:layout="@layout/activity_splash" />
     <activity
         android:id="@+id/signActivity"
-        android:name="com.santiago.worldskillscomida.IniciarSesionActivity"
+        android:name="com.santiago.worldskillscomida.ui.iniciosesion.IniciarSesionActivity"
         android:label="activity_sign"
         tools:layout="@layout/activity_iniciar_sesion" />
     <activity
         android:id="@+id/registrarActivity"
-        android:name="com.santiago.worldskillscomida.RegistrarActivity"
+        android:name="com.santiago.worldskillscomida.ui.RegistrarActivity"
         android:label="activity_registrar"
         tools:layout="@layout/activity_registrar" />
     <activity
         android:id="@+id/especialidadActivity"
-        android:name="com.santiago.worldskillscomida.EspecialidadActivity"
+        android:name="com.santiago.worldskillscomida.ui.especialidad.EspecialidadActivity"
         android:label="activity_especialidad"
         tools:layout="@layout/activity_especialidad" />
     <fragment
         android:id="@+id/navigation_bebida"
-        android:name="com.santiago.worldskillscomida.BebidasFragment"
+        android:name="com.santiago.worldskillscomida.ui.bebida.BebidasFragment"
         android:label="@string/title_bebidas"
         tools:layout="@layout/fragment_bebidas" />
     <fragment
         android:id="@+id/navigation_detalle"
-        android:name="com.santiago.worldskillscomida.DetalleFragment"
+        android:name="com.santiago.worldskillscomida.ui.detalle.DetalleFragment"
         tools:layout="@layout/fragment_detalle" />
 </navigation>

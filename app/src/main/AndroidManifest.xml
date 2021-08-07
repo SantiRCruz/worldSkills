@@ -12,33 +12,36 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WorldSkillsComida">
         <activity
-            android:name=".EspecialidadActivity"
-            android:exported="true" >
-        </activity>
-        <activity
-            android:name=".RegistrarActivity"
-            android:exported="true" >
-
-        </activity>
-
-        <activity
-            android:name=".IniciarSesionActivity"
+            android:name=".ui.especialidad.EspecialidadActivity"
             android:exported="true" >
 
         </activity>
         <activity
-            android:name=".SplashActivity"
+            android:name=".ui.RegistrarActivity"
+            android:exported="true" >
+
+        </activity>
+
+        <activity
+            android:name=".ui.iniciosesion.IniciarSesionActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
+            android:name=".ui.SplashActivity"
             android:exported="true"
-            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:label="@string/app_name" >
+            android:theme="@style/Theme.AppCompat.DayNight.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name" >
+
         </activity>
     </application>
 

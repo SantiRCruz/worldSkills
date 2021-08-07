@@ -5,5 +5,5 @@ data class Productos(
     var nombre:String = "",
     var descripcion :String = "",
     var precio:Int = 0,
-    var url_foto :String = ""
+    var url_imagen :String = ""
 )

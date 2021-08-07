@@ -1,4 +1,4 @@
-package com.santiago.worldskillscomida
+package com.santiago.worldskillscomida.ui
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView
@@ -7,6 +7,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -26,7 +27,10 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_desayuno, R.id.navigation_almuerzo, R.id.navigation_cena,R.id.navigation_bebida
+                R.id.navigation_desayuno,
+                R.id.navigation_almuerzo,
+                R.id.navigation_cena,
+                R.id.navigation_bebida
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

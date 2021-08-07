@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".RegistrarActivity">
+    tools:context=".ui.RegistrarActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cvLogo"
@@ -112,7 +112,7 @@
                     app:startIconDrawable="@drawable/ic_baseline_mail_outline_24">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtCorreo"
+                        android:id="@+id/etCorreo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textEmailAddress" />
@@ -133,7 +133,7 @@
                     app:startIconDrawable="@drawable/ic_baseline_vpn_key_24">
 
                     <com.google.android.material.textfield.TextInputEditText
-                        android:id="@+id/txtConstraseña"
+                        android:id="@+id/etConstrasena"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:inputType="textPassword"
