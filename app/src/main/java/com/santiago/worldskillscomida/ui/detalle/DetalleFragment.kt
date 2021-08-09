@@ -5,12 +5,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.Navigation
 import com.bumptech.glide.Glide
+import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.databinding.FragmentDetalleBinding
 import com.santiago.worldskillscomida.models.Constants
-import com.santiago.worldskillscomida.models.producto.ResponseProducto
+import com.santiago.worldskillscomida.models.bd.BdBodyProduct
+import com.santiago.worldskillscomida.models.webservices.producto.ResponseProducto
+import com.santiago.worldskillscomida.repository.local.DBManager
 
 
 class DetalleFragment : Fragment() {
@@ -37,19 +42,24 @@ class DetalleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        detalleViewModel.getProductoId(Constants.ID_PRODUCTO).observe(viewLifecycleOwner, Observer {
-            when(it){
+        detalleViewModel.getProductoId(Constants.ID_PRODUCTO).observe(viewLifecycleOwner, Observer {data->
+            when(data){
                 is ResponseProducto->{
-                    binding.tvNombre.text = it.productos.nombre
-                    binding.tvDescripcion.text = it.productos.descripcion
-                    binding.tvPrecio.text = "$ "+ it.productos.precio
-                    Glide.with(requireContext()).load(it.productos.url_imagen).into(binding.imgEspecialidad)
+                    binding.tvNombre.text = data.productos.nombre
+                    binding.tvDescripcion.text = data.productos.descripcion
+                    binding.tvPrecio.text = "$ "+ data.productos.precio
+                    Glide.with(requireContext()).load(data.productos.url_imagen).into(binding.imgEspecialidad)
                     binding.progressBar.visibility = View.GONE
                     binding.container.visibility = View.VISIBLE
+                    binding.buttonAgregar.setOnClickListener {
+                        val dbManager = DBManager(requireContext())
+                        var precio_iva = (data.productos.precio*0.19)+data.productos.precio
+                        dbManager.insertData(BdBodyProduct(0,data.productos.id,data.productos.nombre,data.productos.descripcion,data.productos.url_imagen,precio_iva.toInt(),1))
+                        Navigation.findNavController(it).navigate(R.id.navigation_desayuno)
+                    }
                 }
             }
         })
-
 
     }
 

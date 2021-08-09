@@ -1,4 +1,4 @@
-package com.santiago.worldskillscomida.models.registro
+package com.santiago.worldskillscomida.models.webservices.registro
 
 data class BodyRegistro (
     var nombre:String = "",

@@ -1,4 +1,4 @@
-package com.santiago.worldskillscomida.models.categoriaId
+package com.santiago.worldskillscomida.models.webservices.categoriaId
 
 data class CategoriaId(
     var respuesta: String = "",

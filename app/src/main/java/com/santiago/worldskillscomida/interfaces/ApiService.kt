@@ -1,12 +1,12 @@
 package com.santiago.worldskillscomida.interfaces
 
 import com.santiago.worldskillscomida.models.Constants
-import com.santiago.worldskillscomida.models.iniciosesion.ResponseInicioSesion
-import com.santiago.worldskillscomida.models.categoriaId.CategoriaId
-import com.santiago.worldskillscomida.models.especialidad.Especialidad
-import com.santiago.worldskillscomida.models.producto.ResponseProducto
-import com.santiago.worldskillscomida.models.registro.BodyRegistro
-import com.santiago.worldskillscomida.models.registro.ResponseRegistro
+import com.santiago.worldskillscomida.models.webservices.iniciosesion.ResponseInicioSesion
+import com.santiago.worldskillscomida.models.webservices.categoriaId.CategoriaId
+import com.santiago.worldskillscomida.models.webservices.especialidad.Especialidad
+import com.santiago.worldskillscomida.models.webservices.producto.ResponseProducto
+import com.santiago.worldskillscomida.models.webservices.registro.BodyRegistro
+import com.santiago.worldskillscomida.models.webservices.registro.ResponseRegistro
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*

@@ -4,13 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
 import com.santiago.worldskillscomida.databinding.ActivityIniciarSesionBinding
 import com.santiago.worldskillscomida.models.Constants
-import com.santiago.worldskillscomida.models.iniciosesion.ResponseInicioSesion
+import com.santiago.worldskillscomida.models.webservices.iniciosesion.ResponseInicioSesion
 import com.santiago.worldskillscomida.ui.especialidad.EspecialidadActivity
 import com.santiago.worldskillscomida.ui.registrar.RegistroActivity
 
@@ -35,8 +34,8 @@ class IniciarSesionActivity : AppCompatActivity() {
 
     private fun iniciarSesion() {
         binding.buttonInicioSesion.setOnClickListener {view->
-            if (binding.cbRecordarContrasena.isChecked) Toast.makeText(applicationContext, "se recordo contraseña", Toast.LENGTH_SHORT)
-                .show()
+//            if (binding.cbRecordarContrasena.isChecked) Toast.makeText(applicationContext, "se recordo contraseña", Toast.LENGTH_SHORT)
+//                .show()
             iniciarSesionViewModel.getInicioSesion(binding.etCorreo.text.toString(),binding.etConstrasena.text.toString()).observe(this,
                 Observer {
                     when (it){
@@ -44,7 +43,7 @@ class IniciarSesionActivity : AppCompatActivity() {
                             if (it.respuesta=="OK"){
                                 Constants.CONTRASENA_RECORDADA=1
                                 Log.e("InicioSesion",it.toString())
-                                val intent = Intent(applicationContext,EspecialidadActivity::class.java)
+                                val intent = Intent(applicationContext, EspecialidadActivity::class.java)
                                 startActivity(intent)
                                 finish()
                             }else{

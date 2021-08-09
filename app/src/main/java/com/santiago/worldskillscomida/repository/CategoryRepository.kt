@@ -1,8 +1,7 @@
 package com.santiago.worldskillscomida.repository
 
 import com.santiago.worldskillscomida.interfaces.ApiService
-import com.santiago.worldskillscomida.models.categoriaId.CategoriaId
-import com.santiago.worldskillscomida.models.especialidad.Especialidad
+import com.santiago.worldskillscomida.models.webservices.categoriaId.CategoriaId
 
 class CategoryRepository(private val apiService: ApiService) {
 

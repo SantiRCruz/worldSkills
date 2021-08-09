@@ -1,7 +1,7 @@
 package com.santiago.worldskillscomida.repository
 
 import com.santiago.worldskillscomida.interfaces.ApiService
-import com.santiago.worldskillscomida.models.iniciosesion.ResponseInicioSesion
+import com.santiago.worldskillscomida.models.webservices.iniciosesion.ResponseInicioSesion
 
 class InicioSesionRepository(private val apiService: ApiService) {
 

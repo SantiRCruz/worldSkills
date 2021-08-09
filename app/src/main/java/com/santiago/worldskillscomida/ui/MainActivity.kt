@@ -61,6 +61,7 @@ class MainActivity : AppCompatActivity() {
                 startActivity(intent)
                 finish()
             }
+            
         }
         return super.onOptionsItemSelected(item)
     }

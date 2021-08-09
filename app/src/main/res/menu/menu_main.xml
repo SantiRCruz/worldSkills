@@ -3,9 +3,16 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/pedidos"
+        android:icon="@drawable/ic_baseline_add_shopping_cart_24"
+        android:title="Pedidos"
+        app:showAsAction="always"
+        />
+    <item
         android:id="@+id/cerrar_sesion"
         android:icon="@drawable/ic_baseline_exit_to_app_24"
         android:title="Cerrar Sesión"
         app:showAsAction="always"
         />
+
 </menu>

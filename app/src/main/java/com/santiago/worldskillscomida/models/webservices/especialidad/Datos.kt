@@ -1,4 +1,4 @@
-package com.santiago.worldskillscomida.models.especialidad
+package com.santiago.worldskillscomida.models.webservices.especialidad
 
 data class Datos(
     var nombre:String = "",

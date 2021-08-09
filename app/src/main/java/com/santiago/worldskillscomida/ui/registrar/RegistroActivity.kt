@@ -7,10 +7,9 @@ import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import com.google.android.material.snackbar.Snackbar
-import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.databinding.ActivityRegistroBinding
 import com.santiago.worldskillscomida.models.Constants
-import com.santiago.worldskillscomida.models.registro.ResponseRegistro
+import com.santiago.worldskillscomida.models.webservices.registro.ResponseRegistro
 import com.santiago.worldskillscomida.ui.especialidad.EspecialidadActivity
 import com.santiago.worldskillscomida.ui.iniciosesion.IniciarSesionActivity
 

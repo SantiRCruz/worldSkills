@@ -1,7 +1,6 @@
 package com.santiago.worldskillscomida.ui.desayuno
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,11 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.santiago.worldskillscomida.ui.CategoriasAdapater
 import com.santiago.worldskillscomida.databinding.FragmentDesayunoBinding
-import com.santiago.worldskillscomida.interfaces.ApiService
-import com.santiago.worldskillscomida.models.categoriaId.CategoriaId
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.santiago.worldskillscomida.models.webservices.categoriaId.CategoriaId
 
 class DesayunoFragment : Fragment() {
 

@@ -1,4 +1,4 @@
-package com.santiago.worldskillscomida.models.categoriaId
+package com.santiago.worldskillscomida.models.webservices.categoriaId
 
 data class Productos(
     var id: Int = 0,

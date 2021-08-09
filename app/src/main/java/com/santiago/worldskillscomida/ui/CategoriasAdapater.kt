@@ -7,11 +7,10 @@ import android.view.ViewGroup
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
 import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.databinding.ItemCategoriaBinding
 import com.santiago.worldskillscomida.models.Constants
-import com.santiago.worldskillscomida.models.categoriaId.Productos
+import com.santiago.worldskillscomida.models.webservices.categoriaId.Productos
 
 class CategoriasAdapater(val productos :List<Productos>):RecyclerView.Adapter<CategoriasAdapater.CategoriasHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoriasHolder {

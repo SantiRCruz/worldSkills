@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import com.santiago.worldskillscomida.databinding.FragmentAlmuerzoBinding
-import com.santiago.worldskillscomida.models.categoriaId.CategoriaId
+import com.santiago.worldskillscomida.models.webservices.categoriaId.CategoriaId
 import com.santiago.worldskillscomida.ui.CategoriasAdapater
 
 

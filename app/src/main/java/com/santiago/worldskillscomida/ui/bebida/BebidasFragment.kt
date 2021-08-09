@@ -1,7 +1,6 @@
 package com.santiago.worldskillscomida.ui.bebida
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import androidx.recyclerview.widget.GridLayoutManager
 import com.santiago.worldskillscomida.databinding.FragmentBebidasBinding
-import com.santiago.worldskillscomida.models.categoriaId.CategoriaId
+import com.santiago.worldskillscomida.models.webservices.categoriaId.CategoriaId
 import com.santiago.worldskillscomida.ui.CategoriasAdapater
 
 class BebidasFragment : Fragment() {
