@@ -1,20 +1,26 @@
 package com.santiago.worldskillscomida.interfaces
 
 import com.santiago.worldskillscomida.models.Constants
-import com.santiago.worldskillscomida.models.ResponseInicioSesion
+import com.santiago.worldskillscomida.models.iniciosesion.ResponseInicioSesion
 import com.santiago.worldskillscomida.models.categoriaId.CategoriaId
 import com.santiago.worldskillscomida.models.especialidad.Especialidad
-import retrofit2.Call
+import com.santiago.worldskillscomida.models.producto.ResponseProducto
+import com.santiago.worldskillscomida.models.registro.BodyRegistro
+import com.santiago.worldskillscomida.models.registro.ResponseRegistro
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-import retrofit2.http.Path
-import retrofit2.http.Query
+import retrofit2.http.*
 
 interface ApiService {
 
+    @GET("productos/{idProducto}")
+    suspend fun getProductoId(@Path("idProducto")idProducto:Int):ResponseProducto
+
+    @POST("clientes")
+    suspend fun postRegistro(@Body bodyRegistro: BodyRegistro):ResponseRegistro
+
     @GET("clientes")
-    suspend fun getInicioSesion(@Query("correo")correo:String,@Query("contrasena")contrasena:String):ResponseInicioSesion
+    suspend fun getInicioSesion(@Query("correo")correo:String,@Query("contrasena")contrasena:String): ResponseInicioSesion
 
     @GET("especialidad")
     suspend fun getEspecialidad():Especialidad

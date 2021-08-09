@@ -9,19 +9,31 @@
         android:id="@+id/navigation_desayuno"
         android:name="com.santiago.worldskillscomida.ui.desayuno.DesayunoFragment"
         android:label="@string/title_desyauno"
-        tools:layout="@layout/fragment_desayuno" />
+        tools:layout="@layout/fragment_desayuno" >
+        <action
+            android:id="@+id/action_navigation_desayuno_to_navigation_detalle"
+            app:destination="@id/navigation_detalle" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_almuerzo"
         android:name="com.santiago.worldskillscomida.ui.almuerzo.AlmuerzoFragment"
         android:label="@string/title_almuerzo"
-        tools:layout="@layout/fragment_almuerzo" />
+        tools:layout="@layout/fragment_almuerzo" >
+        <action
+            android:id="@+id/action_navigation_almuerzo_to_navigation_detalle"
+            app:destination="@id/navigation_detalle" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_cena"
         android:name="com.santiago.worldskillscomida.ui.cena.CenaFragment"
         android:label="@string/title_cena"
-        tools:layout="@layout/fragment_cena" />
+        tools:layout="@layout/fragment_cena" >
+        <action
+            android:id="@+id/action_navigation_cena_to_navigation_detalle"
+            app:destination="@id/navigation_detalle" />
+    </fragment>
     <activity
         android:id="@+id/splashActivity"
         android:name="com.santiago.worldskillscomida.ui.SplashActivity"
@@ -33,11 +45,6 @@
         android:label="activity_sign"
         tools:layout="@layout/activity_iniciar_sesion" />
     <activity
-        android:id="@+id/registrarActivity"
-        android:name="com.santiago.worldskillscomida.ui.RegistrarActivity"
-        android:label="activity_registrar"
-        tools:layout="@layout/activity_registrar" />
-    <activity
         android:id="@+id/especialidadActivity"
         android:name="com.santiago.worldskillscomida.ui.especialidad.EspecialidadActivity"
         android:label="activity_especialidad"
@@ -46,9 +53,34 @@
         android:id="@+id/navigation_bebida"
         android:name="com.santiago.worldskillscomida.ui.bebida.BebidasFragment"
         android:label="@string/title_bebidas"
-        tools:layout="@layout/fragment_bebidas" />
+        tools:layout="@layout/fragment_bebidas" >
+        <action
+            android:id="@+id/action_navigation_bebida_to_navigation_detalle"
+            app:destination="@id/navigation_detalle" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_detalle"
         android:name="com.santiago.worldskillscomida.ui.detalle.DetalleFragment"
-        tools:layout="@layout/fragment_detalle" />
+        tools:layout="@layout/fragment_detalle" >
+        <action
+            android:id="@+id/action_navigation_detalle_to_navigation_almuerzo"
+            app:destination="@id/navigation_almuerzo" />
+        <action
+            android:id="@+id/action_navigation_detalle_to_navigation_almuerzo2"
+            app:destination="@id/navigation_almuerzo" />
+        <action
+            android:id="@+id/action_navigation_detalle_to_navigation_cena"
+            app:destination="@id/navigation_cena" />
+        <action
+            android:id="@+id/action_navigation_detalle_to_navigation_desayuno"
+            app:destination="@id/navigation_desayuno" />
+        <action
+            android:id="@+id/action_navigation_detalle_to_navigation_bebida"
+            app:destination="@id/navigation_bebida" />
+    </fragment>
+    <activity
+        android:id="@+id/registroActivity"
+        android:name="com.santiago.worldskillscomida.ui.registrar.RegistroActivity"
+        android:label="activity_registro"
+        tools:layout="@layout/activity_registro" />
 </navigation>

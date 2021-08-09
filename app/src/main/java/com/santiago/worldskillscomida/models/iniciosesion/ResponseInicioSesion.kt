@@ -1,4 +1,4 @@
-package com.santiago.worldskillscomida.models
+package com.santiago.worldskillscomida.models.iniciosesion
 
 data class ResponseInicioSesion(
     var respuesta:String = "",

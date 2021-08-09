@@ -4,11 +4,13 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.android.material.snackbar.Snackbar
 import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.databinding.ItemCategoriaBinding
+import com.santiago.worldskillscomida.models.Constants
 import com.santiago.worldskillscomida.models.categoriaId.Productos
 
 class CategoriasAdapater(val productos :List<Productos>):RecyclerView.Adapter<CategoriasAdapater.CategoriasHolder>() {
@@ -33,7 +35,8 @@ class CategoriasAdapater(val productos :List<Productos>):RecyclerView.Adapter<Ca
             binding.tvItemPrecio.text = productos.precio.toString()
             Glide.with(view).load(productos.url_imagen).into(binding.imgItem)
             binding.root.setOnClickListener {
-                Snackbar.make(it,"presionado ${productos.id}",Snackbar.LENGTH_LONG).show()
+                Constants.ID_PRODUCTO = productos.id
+                Navigation.findNavController(it).navigate(R.id.navigation_detalle)
             }
         }
     }
