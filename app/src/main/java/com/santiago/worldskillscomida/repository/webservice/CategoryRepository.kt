@@ -1,4 +1,4 @@
-package com.santiago.worldskillscomida.repository
+package com.santiago.worldskillscomida.repository.webservice
 
 import com.santiago.worldskillscomida.interfaces.ApiService
 import com.santiago.worldskillscomida.models.webservices.categoriaId.CategoriaId

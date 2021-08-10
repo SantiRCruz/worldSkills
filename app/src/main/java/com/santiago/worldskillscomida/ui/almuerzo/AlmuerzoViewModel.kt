@@ -3,7 +3,7 @@ package com.santiago.worldskillscomida.ui.almuerzo
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.santiago.worldskillscomida.interfaces.ApiClient
-import com.santiago.worldskillscomida.repository.CategoryRepository
+import com.santiago.worldskillscomida.repository.webservice.CategoryRepository
 import kotlinx.coroutines.Dispatchers
 
 class AlmuerzoViewModel : ViewModel() {

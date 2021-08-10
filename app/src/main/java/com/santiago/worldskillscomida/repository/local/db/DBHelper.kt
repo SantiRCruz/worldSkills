@@ -1,4 +1,4 @@
-package com.santiago.worldskillscomida.repository.local
+package com.santiago.worldskillscomida.repository.local.db
 
 import android.content.Context
 import android.database.sqlite.SQLiteDatabase

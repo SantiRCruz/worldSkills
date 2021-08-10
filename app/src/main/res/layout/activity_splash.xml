@@ -16,7 +16,6 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        android:backgroundTint="@color/white_gray2"
         android:elevation="30dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -27,14 +26,12 @@
         app:layout_constraintVertical_bias="1.0">
 
 
-
         <ImageView
             android:id="@+id/imageView2"
             android:layout_width="250dp"
             android:layout_height="250dp"
             android:layout_gravity="center"
-            app:srcCompat="@drawable/ic_baseline_fastfood_24"
-            app:tint="@color/orange_500" />
+            app:srcCompat="@mipmap/posible_logo_ws" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/cvSplashSena"

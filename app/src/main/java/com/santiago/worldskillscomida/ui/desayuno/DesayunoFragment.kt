@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.santiago.worldskillscomida.ui.CategoriasAdapater
 import com.santiago.worldskillscomida.databinding.FragmentDesayunoBinding
 import com.santiago.worldskillscomida.models.webservices.categoriaId.CategoriaId
@@ -44,7 +45,7 @@ class DesayunoFragment : Fragment() {
         desayunoViewModel.getListCategory().observe(viewLifecycleOwner, Observer {
             when(it){
                 is CategoriaId  ->{
-                    binding.rvDesayuno.layoutManager = GridLayoutManager(requireContext(),2)
+                    binding.rvDesayuno.layoutManager = LinearLayoutManager(requireContext())
                     binding.rvDesayuno.adapter = CategoriasAdapater(it.productos)
                     binding.progressBarDesayuno.visibility = View.GONE
                     binding.rvDesayuno.visibility = View.VISIBLE

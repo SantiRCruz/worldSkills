@@ -20,25 +20,24 @@
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:padding="10dp"
             android:scaleType="centerCrop"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/ic_baseline_fastfood_24"
-            app:tint="@color/orange_500" />
+            app:srcCompat="@mipmap/posible_logo_ws"
+            android:layout_gravity="center"
+             />
 
     </androidx.cardview.widget.CardView>
 
     <ImageView
-        android:id="@+id/imageView3"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.5"
-        android:background="@drawable/sausage"
-        android:scaleType="centerCrop" />
+        android:src="@drawable/posible_fondo"
+        android:scaleType="centerCrop"/>
 
 
     <androidx.cardview.widget.CardView

@@ -11,6 +11,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.santiago.worldskillscomida.ui.pedidos.PedidosActivity
 import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.databinding.ActivityMainBinding
 import com.santiago.worldskillscomida.ui.iniciosesion.IniciarSesionActivity
@@ -60,6 +61,10 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(applicationContext,IniciarSesionActivity::class.java)
                 startActivity(intent)
                 finish()
+            }
+            R.id.pedidos ->{
+                val intent = Intent(applicationContext, PedidosActivity::class.java)
+                startActivity(intent)
             }
             
         }

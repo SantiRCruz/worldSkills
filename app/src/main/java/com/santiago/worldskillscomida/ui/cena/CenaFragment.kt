@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.santiago.worldskillscomida.ui.CategoriasAdapater
 import com.santiago.worldskillscomida.databinding.FragmentCenaBinding
 import com.santiago.worldskillscomida.models.webservices.categoriaId.CategoriaId
@@ -43,7 +44,7 @@ class CenaFragment : Fragment() {
         cenaViewModel.getListCategory().observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             when(it){
                 is CategoriaId ->{
-                    binding.rvCena.layoutManager = GridLayoutManager(requireContext(),2)
+                    binding.rvCena.layoutManager = LinearLayoutManager(requireContext())
                     val adapter = CategoriasAdapater(it.productos)
                     binding.rvCena.adapter=adapter
                     binding.progressBarCena.visibility = View.GONE

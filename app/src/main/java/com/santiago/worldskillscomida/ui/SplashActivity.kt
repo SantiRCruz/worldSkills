@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.models.Constants
-import com.santiago.worldskillscomida.repository.local.DBHelper
+import com.santiago.worldskillscomida.repository.local.db.DBHelper
 import com.santiago.worldskillscomida.ui.especialidad.EspecialidadActivity
 import com.santiago.worldskillscomida.ui.iniciosesion.IniciarSesionActivity
 

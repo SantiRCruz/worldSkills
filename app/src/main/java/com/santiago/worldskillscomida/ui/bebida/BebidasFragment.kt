@@ -9,6 +9,7 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.*
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.santiago.worldskillscomida.databinding.FragmentBebidasBinding
 import com.santiago.worldskillscomida.models.webservices.categoriaId.CategoriaId
 import com.santiago.worldskillscomida.ui.CategoriasAdapater
@@ -47,7 +48,7 @@ class BebidasFragment : Fragment() {
             when (it) {
                 is CategoriaId -> {
                     val lista = it.productos
-                    binding.rvBebidas.layoutManager = GridLayoutManager(requireContext(), 2)
+                    binding.rvBebidas.layoutManager = LinearLayoutManager(requireContext())
                     val adapter = CategoriasAdapater(lista)
                     binding.rvBebidas.adapter = adapter
                     binding.progressBarBebidas.visibility = View.GONE

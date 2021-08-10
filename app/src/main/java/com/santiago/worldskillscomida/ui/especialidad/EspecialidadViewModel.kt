@@ -3,7 +3,7 @@ package com.santiago.worldskillscomida.ui.especialidad
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.santiago.worldskillscomida.interfaces.ApiClient
-import com.santiago.worldskillscomida.repository.EspecialidadRepository
+import com.santiago.worldskillscomida.repository.webservice.EspecialidadRepository
 
 class EspecialidadViewModel: ViewModel() {
 

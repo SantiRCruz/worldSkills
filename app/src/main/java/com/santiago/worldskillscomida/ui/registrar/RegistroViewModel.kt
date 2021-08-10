@@ -3,7 +3,7 @@ package com.santiago.worldskillscomida.ui.registrar
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
 import com.santiago.worldskillscomida.interfaces.ApiClient
-import com.santiago.worldskillscomida.repository.RegistroRepository
+import com.santiago.worldskillscomida.repository.webservice.RegistroRepository
 import kotlinx.coroutines.Dispatchers
 
 class RegistroViewModel : ViewModel(){

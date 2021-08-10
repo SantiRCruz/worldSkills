@@ -55,8 +55,9 @@
 
         <TextView
             android:id="@+id/tvNombre"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
             android:layout_marginTop="36dp"
             android:layout_marginEnd="16dp"
             android:text="Frijoles"
@@ -65,11 +66,11 @@
             android:textStyle="italic"
             app:layout_constraintEnd_toStartOf="@+id/tvPrecio"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cvImagen"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/cvImagen" />
+
         <TextView
             android:id="@+id/tvPrecio"
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="36dp"
@@ -82,8 +83,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.62"
             app:layout_constraintStart_toEndOf="@+id/tvNombre"
-            app:layout_constraintTop_toBottomOf="@+id/cvImagen"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/cvImagen" />
 
         <TextView
             android:id="@+id/tvDescripcion"
