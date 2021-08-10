@@ -46,7 +46,7 @@
             android:layout_marginEnd="8dp"
             android:text="precio"
             android:textAlignment="center"
-            android:textSize="20sp"
+            android:textSize="15sp"
             app:layout_constraintEnd_toStartOf="@+id/imgItem"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvItemNombre" />

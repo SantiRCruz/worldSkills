@@ -1,5 +1,6 @@
 package com.santiago.worldskillscomida.ui.detalle
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -16,6 +17,7 @@ import com.santiago.worldskillscomida.models.Constants
 import com.santiago.worldskillscomida.models.bd.BdBodyProduct
 import com.santiago.worldskillscomida.models.webservices.producto.ResponseProducto
 import com.santiago.worldskillscomida.repository.local.db.DBManager
+import com.santiago.worldskillscomida.ui.pedidos.PedidosActivity
 
 
 class DetalleFragment : Fragment() {
@@ -54,9 +56,10 @@ class DetalleFragment : Fragment() {
                     binding.buttonAgregar.setOnClickListener {
                         val dbManager = DBManager(requireContext())
                         var precio_iva = (data.productos.precio*0.19)+data.productos.precio
-                        Log.e("data",BdBodyProduct(0,data.productos.id,data.productos.nombre,data.productos.descripcion,data.productos.url_imagen,precio_iva.toInt(),1).toString())
-                        dbManager.insertData(BdBodyProduct(0,data.productos.id,data.productos.nombre,data.productos.descripcion,data.productos.url_imagen,precio_iva.toInt(),1))
-                        Navigation.findNavController(it).navigate(R.id.navigation_desayuno)
+                        Log.e("data",BdBodyProduct(0,data.productos.id,data.productos.nombre,data.productos.descripcion,data.productos.url_imagen,precio_iva.toInt(),precio_iva.toInt(),1).toString())
+                        dbManager.insertData(BdBodyProduct(0,data.productos.id,data.productos.nombre,data.productos.descripcion,data.productos.url_imagen,precio_iva.toInt(),precio_iva.toInt(),1))
+                        val intent = Intent(activity,PedidosActivity::class.java)
+                        startActivity(intent)
                     }
                 }
             }

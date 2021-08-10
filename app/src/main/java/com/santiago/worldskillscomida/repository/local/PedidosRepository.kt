@@ -7,4 +7,6 @@ class PedidosRepository(private val dbManager: DBManager) {
 
     suspend fun getPedidos() : List<BdBodyProduct> = dbManager.listData()
 
+    suspend fun getTotalPedidos():Int = dbManager.totalPrecio()
+
 }

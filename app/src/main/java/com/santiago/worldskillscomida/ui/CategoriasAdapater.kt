@@ -31,7 +31,7 @@ class CategoriasAdapater(val productos :List<Productos>):RecyclerView.Adapter<Ca
         fun bind(productos: Productos){
             binding.tvItemNombre.text = productos.nombre
             binding.tvItemDescripcion.text = productos.descripcion
-            binding.tvItemPrecio.text = productos.precio.toString()
+            binding.tvItemPrecio.text = "$ " + productos.precio
             Glide.with(view).load(productos.url_imagen).into(binding.imgItem)
             binding.root.setOnClickListener {
                 Constants.ID_PRODUCTO = productos.id

@@ -39,16 +39,27 @@ class PedidosAdapter(val bdBodyProduct: List<BdBodyProduct>) :
             val dbManager = DBManager(context)
             binding.tvItemNombre.text = bdBodyProduct.nombre
             binding.tvItemCantidad.text = bdBodyProduct.cantidad.toString()
-            binding.tvItemPrecio.text = "$ " + bdBodyProduct.precio_iva.toString()
+            binding.tvItemPrecio.text = "$ " + bdBodyProduct.precio_iva_total.toString()
             Glide.with(view).load(bdBodyProduct.url_imagen).into(binding.imgItem)
+            if (bdBodyProduct.cantidad == 1)binding.buttonRestar.setImageResource(R.drawable.ic_baseline_delete_forever_24)
             binding.buttonRestar.setOnClickListener {
                 if (bdBodyProduct.cantidad == 1) {
-                    val result = dbManager.delete(bdBodyProduct.id)
+                    val result = dbManager.deleteId(bdBodyProduct.id)
                     if (result > 0) {
                         val intent = Intent(context, PedidosActivity::class.java)
                         ContextCompat.startActivity(context, intent, null)
                     }
+                }else{
+                    dbManager.updateCantidad(bdBodyProduct.id,(bdBodyProduct.precio_iva_unidad*(bdBodyProduct.cantidad-1)),(bdBodyProduct.cantidad-1))
+                    val intent = Intent(context, PedidosActivity::class.java)
+                    ContextCompat.startActivity(context, intent, null)
                 }
+            }
+            binding.buttonSumar.setOnClickListener {
+                dbManager.updateCantidad(bdBodyProduct.id,bdBodyProduct.precio_iva_unidad*(bdBodyProduct.cantidad+1),bdBodyProduct.cantidad+1)
+                val intent = Intent(context, PedidosActivity::class.java)
+                ContextCompat.startActivity(context, intent, null)
+
             }
         }
     }

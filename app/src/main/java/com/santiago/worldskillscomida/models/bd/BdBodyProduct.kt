@@ -6,6 +6,7 @@ data class BdBodyProduct(
     var nombre:String = "",
     var descripcion :String = "",
     var url_imagen :String = "",
-    var precio_iva:Int = 0,
+    var precio_iva_unidad:Int = 0,
+    var precio_iva_total:Int = 0,
     var cantidad : Int = 0
 )
