@@ -60,10 +60,10 @@ class PedidosActivity : AppCompatActivity() {
                                 Log.e("pedido enviado",it.toString())
                                 val result = dbManager.deleteAll()
                                 if (result>0){
+                                    Snackbar.make(view,"Se ha enviado el pedido",Snackbar.LENGTH_LONG).show()
                                     val intent = Intent(applicationContext,PedidosActivity::class.java)
                                     startActivity(intent)
                                     finish()
-                                    Snackbar.make(view,"Se ha enviado el pedido",Snackbar.LENGTH_LONG).show()
                                 }else{
                                     Snackbar.make(view,"Error al enviar el pedido",Snackbar.LENGTH_LONG).show()
                                 }

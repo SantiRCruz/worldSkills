@@ -33,6 +33,11 @@
             android:layout_gravity="center"
             app:srcCompat="@mipmap/posible_logo_ws" />
 
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"/>
+
         <androidx.cardview.widget.CardView
             android:id="@+id/cvSplashSena"
             android:layout_width="60dp"

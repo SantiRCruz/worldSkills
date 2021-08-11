@@ -1,5 +1,6 @@
 package com.santiago.worldskillscomida.ui
 
+import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,8 +29,9 @@ class SplashActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-//                Toast.makeText(applicationContext, ""+Constants.CONTRASENA_RECORDADA, Toast.LENGTH_SHORT).show()
-                if (Constants.CONTRASENA_RECORDADA==1){
+               val sharedPreference = getSharedPreferences("inicioSesion",Context.MODE_PRIVATE)
+                var activo = sharedPreference.getBoolean(Constants.KEY_PERMANECER_ACTIVO,false)
+                if (activo){
                     val intent = Intent(applicationContext, EspecialidadActivity::class.java)
                     startActivity(intent)
                     finish()
@@ -38,6 +40,7 @@ class SplashActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 }
+
 
             }
         }.start()

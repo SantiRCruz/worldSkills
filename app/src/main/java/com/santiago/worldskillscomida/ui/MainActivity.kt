@@ -1,5 +1,6 @@
 package com.santiago.worldskillscomida.ui
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
@@ -14,6 +15,7 @@ import androidx.navigation.ui.setupWithNavController
 import com.santiago.worldskillscomida.ui.pedidos.PedidosActivity
 import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.databinding.ActivityMainBinding
+import com.santiago.worldskillscomida.models.Constants
 import com.santiago.worldskillscomida.ui.iniciosesion.IniciarSesionActivity
 
 class MainActivity : AppCompatActivity() {
@@ -58,6 +60,11 @@ class MainActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId){
             R.id.cerrar_sesion ->{
+                val sharedPreferences = getSharedPreferences("inicioSesion",Context.MODE_PRIVATE)
+                val edit = sharedPreferences.edit()
+                edit.apply{
+                    putBoolean(Constants.KEY_PERMANECER_ACTIVO,false)
+                }.apply()
                 val intent = Intent(applicationContext,IniciarSesionActivity::class.java)
                 startActivity(intent)
                 finish()

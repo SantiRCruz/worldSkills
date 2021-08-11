@@ -5,8 +5,18 @@ class Constants {
     companion object{
 
         val API_URL = "https://wsc.fabricasoftware.co/api/"
+
+        val KEY_CORREO = "contrasena  "
+        val KEY_CONTRASENA = "contrasena"
+        val KEY_RECORDAR_CONTRASENA = "recordar"
+        val KEY_PERMANECER_ACTIVO = "activo"
+
         var CONTRASENA_RECORDADA = 0
+
+        //para listar el detalle
         var ID_PRODUCTO = 0
+
+        // id para pedidos
         var ID_CLIENTE = 0
 
         //BD
@@ -23,6 +33,7 @@ class Constants {
         val TABLE_COLUMN_6 = "precio_iva_unidad"
         val TABLE_COLUMN_7 = "precio_iva_total"
         val TABLE_COLUMN_8 = "cantidad"
+
 
         val TABLE_CREATE = " CREATE TABLE " + TABLE_NAME + " ( " +
                 TABLE_COLUMN_1 + " INTEGER PRIMARY KEY AUTOINCREMENT , " +
