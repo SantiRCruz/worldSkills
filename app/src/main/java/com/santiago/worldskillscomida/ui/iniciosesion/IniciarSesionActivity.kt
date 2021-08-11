@@ -42,6 +42,7 @@ class IniciarSesionActivity : AppCompatActivity() {
                         is ResponseInicioSesion ->{
                             if (it.respuesta=="OK"){
                                 Constants.CONTRASENA_RECORDADA=1
+                                Constants.ID_CLIENTE=it.idCliente
                                 Log.e("InicioSesion",it.toString())
                                 val intent = Intent(applicationContext, EspecialidadActivity::class.java)
                                 startActivity(intent)

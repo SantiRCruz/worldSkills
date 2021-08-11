@@ -7,6 +7,7 @@ class Constants {
         val API_URL = "https://wsc.fabricasoftware.co/api/"
         var CONTRASENA_RECORDADA = 0
         var ID_PRODUCTO = 0
+        var ID_CLIENTE = 0
 
         //BD
 

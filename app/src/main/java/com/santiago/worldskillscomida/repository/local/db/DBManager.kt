@@ -6,6 +6,7 @@ import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import com.santiago.worldskillscomida.models.Constants
 import com.santiago.worldskillscomida.models.bd.BdBodyProduct
+import com.santiago.worldskillscomida.models.webservices.pedido.Pedido
 
 class DBManager(context : Context) {
 
@@ -71,6 +72,21 @@ class DBManager(context : Context) {
                 bdBodyProduct.precio_iva_total = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_7)).toInt()
                 bdBodyProduct.cantidad = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_8)).toInt()
                 list.add(bdBodyProduct)
+            }while (result.moveToNext())
+        closeDb()
+        return list
+    }
+    fun listDataPedidos():MutableList<Pedido>{
+        val list : MutableList<Pedido> = arrayListOf()
+        openDbRd()
+        val result = db?.rawQuery(Constants.QUERY_ALL,null)
+        if (result!!.moveToFirst())
+            do {
+                val pedido = Pedido()
+                pedido.id_producto = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_2)).toInt()
+                pedido.precio = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_6)).toInt()
+                pedido.cantidad = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_8)).toInt()
+                list.add(pedido)
             }while (result.moveToNext())
         closeDb()
         return list
