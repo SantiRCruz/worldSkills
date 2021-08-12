@@ -22,7 +22,7 @@ import com.santiago.worldskillscomida.ui.pedidos.PedidosActivity
 
 class DetalleFragment : Fragment() {
 
-    private val detalleViewModel : DetalleViewModel by viewModels()
+    private val detalleViewModel: DetalleViewModel by viewModels()
     private var _binding: FragmentDetalleBinding? = null
 
     // This property is only valid between onCreateView and
@@ -44,26 +44,46 @@ class DetalleFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        detalleViewModel.getProductoId(Constants.ID_PRODUCTO).observe(viewLifecycleOwner, Observer {data->
-            when(data){
-                is ResponseProducto->{
-                    binding.tvNombre.text = data.productos.nombre
-                    binding.tvDescripcion.text = data.productos.descripcion
-                    binding.tvPrecio.text = "$ "+ data.productos.precio
-                    Glide.with(requireContext()).load(data.productos.url_imagen).into(binding.imgEspecialidad)
-                    binding.progressBar.visibility = View.GONE
-                    binding.container.visibility = View.VISIBLE
-                    binding.buttonAgregar.setOnClickListener {
-                        val dbManager = DBManager(requireContext())
-                        var precio_iva = (data.productos.precio*0.19)+data.productos.precio
-                        Log.e("data",BdBodyProduct(0,data.productos.id,data.productos.nombre,data.productos.descripcion,data.productos.url_imagen,precio_iva.toInt(),precio_iva.toInt(),1).toString())
-                        dbManager.insertData(BdBodyProduct(0,data.productos.id,data.productos.nombre,data.productos.descripcion,data.productos.url_imagen,precio_iva.toInt(),precio_iva.toInt(),1))
-                        val intent = Intent(activity,PedidosActivity::class.java)
-                        startActivity(intent)
+        detalleViewModel.getProductoId(Constants.ID_PRODUCTO)
+            .observe(viewLifecycleOwner, Observer { data ->
+                when (data) {
+                    is ResponseProducto -> {
+                        binding.tvNombre.text = data.productos.nombre
+                        binding.tvDescripcion.text = data.productos.descripcion
+                        binding.tvPrecio.text = "$ " + data.productos.precio
+                        Glide.with(requireContext()).load(data.productos.url_imagen)
+                            .into(binding.imgEspecialidad)
+                        binding.progressBar.visibility = View.GONE
+                        binding.container.visibility = View.VISIBLE
+                        binding.buttonAgregar.setOnClickListener {
+                            val dbManager = DBManager(requireContext())
+
+                            val result = dbManager.listAcumulacionPedidos(data.productos.id)
+                            Log.e("lista acumulados",result.toString())
+                            if (result.isEmpty()) {
+                                var precio_iva = (data.productos.precio * 0.19) + data.productos.precio
+                                dbManager.insertData(BdBodyProduct(
+                                        0,
+                                        data.productos.id,
+                                        data.productos.nombre,
+                                        data.productos.descripcion,
+                                        data.productos.url_imagen,
+                                        precio_iva.toInt(),
+                                        precio_iva.toInt(),
+                                        1
+                                    )
+                                )
+                                val intent = Intent(activity, PedidosActivity::class.java)
+                                startActivity(intent)
+                            } else {
+                                dbManager.updateCantidad(result.get(0).id,result[0].precio_iva_unidad*(result[0].cantidad+1),result[0].cantidad+1)
+                                val intent = Intent(activity, PedidosActivity::class.java)
+                                startActivity(intent)
+                            }
+                        }
                     }
                 }
-            }
-        })
+            })
 
     }
 

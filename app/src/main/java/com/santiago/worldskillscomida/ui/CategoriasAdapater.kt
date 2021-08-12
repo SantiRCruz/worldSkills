@@ -27,7 +27,7 @@ class CategoriasAdapater(val productos :List<Productos>):RecyclerView.Adapter<Ca
     }
 
     class CategoriasHolder(val view : View,val context:Context):RecyclerView.ViewHolder(view){
-        private var binding = ItemCategoriaBinding.bind(view )
+        private var binding = ItemCategoriaBinding.bind(view)
         fun bind(productos: Productos){
             binding.tvItemNombre.text = productos.nombre
             binding.tvItemDescripcion.text = productos.descripcion

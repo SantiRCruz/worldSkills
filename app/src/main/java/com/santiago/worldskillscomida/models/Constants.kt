@@ -13,6 +13,10 @@ class Constants {
 
         var CONTRASENA_RECORDADA = 0
 
+        //politicas de privacidad
+        var POLITICAS_PRIVACIDAD = ""
+        var POLITICAS_ELECCION = 0
+
         //para listar el detalle
         var ID_PRODUCTO = 0
 

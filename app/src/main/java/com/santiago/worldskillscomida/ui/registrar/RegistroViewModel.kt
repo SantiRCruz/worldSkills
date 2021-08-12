@@ -17,5 +17,12 @@ class RegistroViewModel : ViewModel(){
             emit(e)
         }
     }
+    fun getPoliticas()= liveData(Dispatchers.IO) {
+        try {
+            emit(registroRepository.getPoliticas())
+        }catch (e : Exception){
+            emit(e)
+        }
+    }
 
 }

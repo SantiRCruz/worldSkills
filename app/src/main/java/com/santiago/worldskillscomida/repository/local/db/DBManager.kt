@@ -91,6 +91,24 @@ class DBManager(context : Context) {
         closeDb()
         return list
     }
+    fun listAcumulacionPedidos(id_producto:Int):MutableList<BdBodyProduct>{
+        val list : MutableList<BdBodyProduct> = arrayListOf()
+        openDbRd()
+        val result = db?.rawQuery(Constants.QUERY_ALL + " WHERE " + Constants.TABLE_COLUMN_2 + " =? " ,
+            arrayOf(id_producto.toString()))
+        if (result!!.moveToFirst())
+            do {
+                val bdBodyProduct = BdBodyProduct()
+                bdBodyProduct.id = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_1)).toInt()
+                bdBodyProduct.idProducto = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_2)).toInt()
+                bdBodyProduct.precio_iva_unidad = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_6)).toInt()
+                bdBodyProduct.precio_iva_total = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_7)).toInt()
+                bdBodyProduct.cantidad = result.getString(result.getColumnIndex(Constants.TABLE_COLUMN_8)).toInt()
+                list.add(bdBodyProduct)
+            }while (result.moveToNext())
+        closeDb()
+        return list
+    }
     fun deleteId(id : Int):Int{
         openDbWr()
         val result = db?.delete(Constants.TABLE_NAME, " id =? ", arrayOf(id.toString()))
