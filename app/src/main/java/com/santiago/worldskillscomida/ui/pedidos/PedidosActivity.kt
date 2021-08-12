@@ -8,15 +8,18 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.Observer
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.android.material.snackbar.Snackbar
+import com.santiago.worldskillscomida.R
 import com.santiago.worldskillscomida.databinding.ActivityPedidosBinding
 import com.santiago.worldskillscomida.models.Constants
 import com.santiago.worldskillscomida.models.bd.BdBodyProduct
 import com.santiago.worldskillscomida.models.webservices.pedido.ResponsePedidos
 import com.santiago.worldskillscomida.repository.local.db.DBManager
+import com.santiago.worldskillscomida.ui.DialogPedido
 import com.santiago.worldskillscomida.ui.MainActivity
 import com.santiago.worldskillscomida.ui.PedidosAdapter
 import kotlinx.coroutines.flow.collect
@@ -44,7 +47,7 @@ class PedidosActivity : AppCompatActivity() {
     private fun buttonPedido() {
         binding.buttonPedido.setOnClickListener {view->
             val dbManager = DBManager(applicationContext)
-            val listPedidos = dbManager.listDataPedidos()
+             val listPedidos = dbManager.listDataPedidos()
             val total_pedidos = dbManager.totalPrecio()
 
             pedidosViewModel.postPedidos(
@@ -60,10 +63,10 @@ class PedidosActivity : AppCompatActivity() {
                                 Log.e("pedido enviado",it.toString())
                                 val result = dbManager.deleteAll()
                                 if (result>0){
-                                    Snackbar.make(view,"Se ha enviado el pedido",Snackbar.LENGTH_LONG).show()
-                                    val intent = Intent(applicationContext,PedidosActivity::class.java)
-                                    startActivity(intent)
-                                    finish()
+                                    val dialog = DialogPedido()
+                                    dialog.show(supportFragmentManager,"pedido")
+
+
                                 }else{
                                     Snackbar.make(view,"Error al enviar el pedido",Snackbar.LENGTH_LONG).show()
                                 }

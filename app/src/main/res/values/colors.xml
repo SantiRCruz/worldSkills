@@ -12,5 +12,7 @@
     <color name="white_gray2">#E0E0E0</color>
     <color name="beige">#FFF3D6</color>
     <color name="orange_100">#FFAC86</color>
+    <color name="verde">#41A700</color>
+    <color name="tranparente">#00FFFFFF</color>
 
 </resources>
